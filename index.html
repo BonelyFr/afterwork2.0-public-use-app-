@@ -941,7 +941,7 @@ button, .day, .bcard, .chip span { transition: transform 0.18s ease, background-
   var termsOk = false;
   try { termsOk = localStorage.getItem(K4) === '1'; } catch (e) { termsOk = true; }
   function markIntroSeen() { introSeen = true; try { localStorage.setItem(K3, '1'); } catch (e) {} }
-  function usingSample() { return !Object.keys(cu.blocks).length; }
+  function usingSample() { return !Object.keys(cu.blocks).length && !Object.keys(cu.items).length; }
 
   /* ---------- tasks ---------- */
   function fmtTime(m) { var h = Math.floor(m / 60), mm = m % 60; return (h % 12 || 12) + ':' + (mm < 10 ? '0' : '') + mm + ' ' + (h >= 12 ? 'PM' : 'AM'); }
